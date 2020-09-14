@@ -28,19 +28,39 @@ function isValidEmail(email){
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-// Function to check if required fields have data
-function checkRequired(inputArray) {
-    inputArray.forEach(function(input) {
-        if ( input.value === '' ) {
-            showError(input,'This field is required');
-        } else
-            showSuccess(input);
-    });
-}
 // This is the event listner for the form on submit
 form.addEventListener('submit', function(e) {
     e.preventDefault(); //Use to Stop the reloding of page
 
-    checkRequired([username,email,password,password2])
+    if (username.value === ''){
+        showError(username, ' Username is required');
+    }else {
+        showSuccess(username);
+
+    }
+
+    if (email.value === ''){
+        showError(email, ' email is required');
+    } else if (!isValidEmail(email.value)){
+        showError(email,'Email is invalid')
+    }
+    else {
+        showSuccess(email);
+
+    }
+
+    if (password.value === ''){
+        showError(password, ' password is required');
+    }else {
+        showSuccess(password);
+
+    }
+
+    if (password2.value === ''){
+        showError(password2, ' Password is required');
+    }else {
+        showSuccess(password2);
+
+    }
 
 })
