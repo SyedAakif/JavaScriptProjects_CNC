@@ -6,7 +6,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-
+let allFeildsAreValid = true;
 // All Functions
 // 1. Funtion to Show Error
 function showError(input,message) {  // in curly brackets we type the execution
@@ -29,6 +29,7 @@ function checkEmail(input){
     if ( re.test(input.value.trim()) ) {
         showSuccess(input);
     }else {
+        allFeildsAreValid = false;
         showError(input,`${getFieldId(input)} is not valid`);
     }
 
@@ -37,17 +38,22 @@ function checkEmail(input){
 function checkRequired(inputArray) {
     inputArray.forEach(function(input) {
         if ( input.value === '' ) {
+            allFeildsAreValid = false;
             showError(input,'This field is required');
-        } else
+        } else{
+            allFeildsAreValid = true;
             showSuccess(input);
+        }
      
     });
 }
 // Function  to check the length of the input function
 function checkLength(input, min, max) {
     if (input.value.length < min ){
+        allFeildsAreValid = false;
         showError(input,`${getFieldId(input)} needs to be at least ${min} characters`)
     }else if(input.value.length > max ) {
+        allFeildsAreValid = false;
         showError(input,`${getFieldId(input)} needs to be less than ${max} characters`);
     } else
         showSuccess(input);
@@ -55,6 +61,7 @@ function checkLength(input, min, max) {
 // Function to Check if Password & confirm Password is Match 
 function checkPasswordMatch(input1, input2){
     if (input1.value !== input2.value) {
+        allFeildsAreValid = false;
         showError(input2, "Passwords Don't match");
     }
 }
@@ -71,6 +78,7 @@ inputArray.forEach(function(input){
 // This is the event listner for the form on submit
 form.addEventListener('submit', function(e) {
     e.preventDefault(); //Use to Stop the reloding of page
+    allFeildsAreValid = true;
 
     checkRequired([username,email,password,password2]);
     checkLength(username,3,10);  // (field, minValue, maxValue)
@@ -78,6 +86,7 @@ form.addEventListener('submit', function(e) {
     checkEmail(email) ;
     checkPasswordMatch(password,password2);
     refreshForm([username,email,password,password2]);
-    alert("Your Form is submitted successfully");
-    
+    if(allFeildsAreValid) {
+        alert("Your Form is submitted successfully");
+    }
 })
