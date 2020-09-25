@@ -122,3 +122,14 @@ p.text {
 p.text span {
     color: greenyellow;
 }
+button.home{
+    cursor: pointer;
+    background-color: navy;
+    border: 2px solid navy;
+    color: white;
+    display: block;
+    font-size: 16px;  
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;  
+}
