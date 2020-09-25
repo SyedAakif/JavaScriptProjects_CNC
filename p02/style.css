@@ -38,6 +38,7 @@ body {
     height: 12px;
     width: 15px;
     margin: 2px;
+    margin-bottom: 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -68,13 +69,13 @@ body {
     transform: scale(1.2);
 }
 
-.legend{
+.legend {
     background-color: rgba(24, 22, 22, 0.301);
-    padding: 5px 10px;
+    margin-left: 0px;
+    padding: 15px 25px;
     color: lightgray;
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
 }
 
 .legend li{
@@ -85,9 +86,9 @@ body {
 
 }
 
-legend li small{
+.legend li small{
     display: inline;
-    margin-left: 2000px;
+    margin-left: 20px;
 }
 
 .legend .seat:not(.occupied):hover {
