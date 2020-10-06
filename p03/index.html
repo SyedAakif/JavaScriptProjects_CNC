@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/progress.css">
+
+    <title>Video Player</title>
+</head>
+<body>
+    <h1>Video Player</h1>
+    <video src="assets/videos/Mechanical Engineering.mp4" id="video" class="screen" poster="assets/images/play-button-28241.png"></video>
+    <div class="controls">
+        <button class="btn" id="play">
+            <i class="fas fa-play fa-2x"></i>
+        </button>
+        <button class="btn" id="stop">
+            <i class="fas fa-stop fa-2x"></i>
+        </button>
+        <input type="range" id="progress" class="progress" min="0" max="100" step="0.1" value="0">
+        <span id="timestamp" class="timestamp">00:00</span>
+
+
+    </div>
+
+    <script src="style.js"></script>
+    <script src="https://kit.fontawesome.com/e25a5bbb13.js" crossorigin="anonymous"></script>
+</body>
+</html>
