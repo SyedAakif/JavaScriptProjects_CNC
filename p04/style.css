@@ -1,0 +1,90 @@
+:root {
+    --primary-color: yellow;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.897);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+p {
+    color: rgba(245, 199, 82, 0.863);
+    text-align: center;
+}
+
+.btn {
+    margin-right: 300px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid whitesmoke;
+}
+
+.flip-img {
+    background-color: var(--primary-color);
+    height: 40px;
+    width: 40px;
+}
+
+.money_img {
+    width: fit-content;
+}
+
+.currency {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+.currency select {
+    padding: 10px 20px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px ;
+    font-size: 16px;
+}
+
+.currency input {
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    text-align: right;
+    width: 150px;
+}
+
+.flip-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.rate {
+    color: var(--primary-color);
+    font-style: italic;
+    font-size: 20px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+select:focus, input:focus, button:focus {
+    outline: 0;
+}
