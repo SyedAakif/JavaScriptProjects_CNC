@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hangman Game</title>
+</head>
+<body>
+    <h1>Hangman</h1>
+    <p>Can you Guess the Hidden Words? Please enter a letter.</p>
+
+    <div class="game-container">
+        <svg height='250px' width='200px' class="figure-container">  <!--SVG=Scalable Vector Graphics (SVG) are an XML-based markup language for describing two-dimensional based vector graphics-->>
+            <!-- Platform -->
+            <line x1="60" y1="20" x2="140" y2="20"/>
+            <line x1="140" y1="20" x2="140" y2="50"/>
+            <line x1="60" y1="20" x2="60" y2="230"/>
+            <line x1="20" y1="230" x2="100" y2="230"/>
+            <!-- Head of Hangman  -->
+            <circle cx="140" cy="70" r="20" class="hangman-part" />
+            <!-- Body of the Hangman -->
+            <line x1="140" y1="90" x2="140" y2="150" class="hangman-part" />
+            <!-- Hands of the Hangman -->
+            <line x1="140" y1="120" x2="120" y2="100" class="hangman-part" />
+            <line x1="140" y1="120" x2="160" y2="100" class="hangman-part" />
+            <!-- Legs of the Hangman -->
+            <line x1="140" y1="150" x2="120" y2="180" class="hangman-part" />
+            <line x1="140" y1="150" x2="160" y2="180" class="hangman-part" />
+            
+        </svg>
+
+        <div id="wrong-letters" class="worng-letters">
+            <!--<p>Wrong Letters</p>
+            <span> x, y, z </span> -->
+        </div>
+
+        <div class="word" id="word">
+         <!--<div class="letter">h</div>
+            <div class="letter">e</div>
+            <div class="letter">l</div>         We will Add all these things in comments with JavaScript 
+            <div class="letter">l</div>
+            <div class="letter">o</div> -->  
+        </div>
+    </div>
+
+    <!-- Container for Popup Message: Win or Lose -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <h2 id="win-lose"> 
+              <!-- You Won! -->  
+            </h2> 
+            <button id="restart">
+                Restart Game
+            </button>  
+        </div>
+    </div>
+
+    <!-- Container for sliding Notification: Repeat letter Input -->
+    <div class="slider-container" id="slider-container" hidden=true>
+        <p>You have already entered this Letter.</p>
+    </div>
+
+    <div class="signature">
+        <img src="images/signature.png" class="image">
+    </div>
+        
+
+    <script src="script.js"></script>
+</body>
+</html>

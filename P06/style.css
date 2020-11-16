@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: mediumslateblue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    margin: 0;
+}
+
+h1 {
+    margin: 20px 0 0;
+}
+
+.game-container {
+    padding: 20px 30px;
+    position: relative;
+    margin: auto;
+    width: 450px;
+    height: 350px;
+   
+}
+
+.wrong-letterss {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.wrong-letterss p {
+    margin: 0 0 100px;
+}
+
+.wrong-letterss span {
+    font-size: 24px;
+}
+
+.word {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* translateX() is used here to make the text fully in the centre */   
+}
+
+.letter {
+    border-bottom: 3px solid skyblue;
+    display: inline-flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    width: 20px;
+    height: 40px;
+}
+
+.figure-container {
+    stroke: whitesmoke;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    fill: transparent; /* To make the head of the hangman transparent */
+    
+}
+
+.hangman-part {
+    display: none;
+}
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.popup {
+    background-color: rgba(135, 220, 253, 0.726);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.popup h2 {
+    color: gold;
+}
+
+.popup button {
+    cursor: pointer;
+    background-color: white;
+    border: 0;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.popup button:focus {
+    outline: 0;
+}
+
+.popup button:active {
+    transform: scale(0.95);
+}
+
+.slider-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px 10px 0 0;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: -5px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-container p{
+    margin: 0;
+}
+
+.slider-container.show {
+    transform: translateY(-5px);
+}
+
+.signature {
+    display: flex;
+    margin-left: 70%;
+    padding-left: 50px;
+    bottom: 50px;
+    padding-top: 70px;
+}
+
+.image {
+    height: 100px;
+    width: 350px;
+}
