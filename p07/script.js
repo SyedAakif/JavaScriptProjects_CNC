@@ -20,7 +20,6 @@ function searchMeal(e) {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 resultHeading.innerHTML = `<h2>Search results for '${term}':</h2>`;
                 if(data.meals == null) {
                     resultHeading.innerHTML = `<p>There are no search results for '${term}'. Please try a diffrent search</p>`
@@ -56,7 +55,7 @@ function getMealById(mealID) {
 // Fuction to add a Meal to DOM
 function addMealToDOM(meal) {
     const Ingredients = [];
-
+    debugger
     for(i=1; i<=20; i++) {
         if(meal[`strIngredient${i}`]) {
             Ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`);
@@ -84,8 +83,19 @@ function addMealToDOM(meal) {
             </div>
         </div>
     `;
+    selectedMeal.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
 
 }
+
+// Function to Add a Random Meal
+function randomMeal(){
+    fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+    .then(res => res.json())
+    .then(rndmMeal => {
+        addMealToDOM(rndmMeal.meals[0])
+    })
+}
+
 
 // Event Listners
 // 1. Submit Button
@@ -95,7 +105,7 @@ submit.addEventListener('submit', searchMeal)
 mealContainer.addEventListener('click', e => {
     const mealInfo = e.path.find( item => {
         if (item.classList) {
-            return item.classList.contains('meals-info');
+            return item.classList.contains('meals-info');      
         } else {
             return false
         }
@@ -104,6 +114,12 @@ mealContainer.addEventListener('click', e => {
     if (mealInfo) {
         const mealID = mealInfo.getAttribute('data-mealid');
         getMealById(mealID);
+        
     }
+    
+})
 
+// 3. Random Button
+random.addEventListener('click', e => {
+    randomMeal()
 })
