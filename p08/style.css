@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Noto+Serif:ital@1&display=swap');@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+:root {
+    --box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.2);
+    --plus: green;
+    --minus: red;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Noto Serif', serif;
+}
+
+.container {
+    width: 350px;
+    margin: 30px auto;
+}
+
+h1 {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+h3 {
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+}
+
+h4 {
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.income-expense-summary {
+    background-color: honeydew;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    box-shadow: var(--box-shadow);
+}
+
+.income-expense-summary > div {
+    flex: 1;
+    text-align: center;
+}
+
+.income-expense-summary > div:first-of-type{
+    border-right: 5px solid rgba(220, 220, 220, 0.801);
+}
+
+.money {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: var(--plus);
+}
+
+.money.minus{
+    color: var(--minus);
+}
+
+.list{
+    list-style-type: none;
+    padding: 0px;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.list li.plus {
+    border-right: 5px solid var(--plus);
+}
+
+.list li.minus{
+    border-right: 5px solid var(--minus);
+}
+
+.delete-btn{
+    background-color: var(--minus);
+    border: 0;
+    color: white;
+    padding: 2px 5px;
+    cursor: default;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    transform: translate(-150%,15%);
+    opacity: 0;
+    outline: 0;
+    transition: opacity 0.5s ease;
+}
+
+.list li:hover .delete-btn{
+    opacity: 1;
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+input{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn {
+    background-color: rgba(93, 194, 124, 0.822);
+    box-shadow: var(--box-shadow);
+    color: whitesmoke;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0 30px;
+    cursor: pointer;
+    border-radius: 2px;
+}

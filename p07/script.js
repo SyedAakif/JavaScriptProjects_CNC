@@ -55,7 +55,6 @@ function getMealById(mealID) {
 // Fuction to add a Meal to DOM
 function addMealToDOM(meal) {
     const Ingredients = [];
-    debugger
     for(i=1; i<=20; i++) {
         if(meal[`strIngredient${i}`]) {
             Ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`);
