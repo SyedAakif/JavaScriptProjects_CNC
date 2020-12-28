@@ -14,6 +14,7 @@ const Amount = document.getElementById('amount');
 //     { id: 3, description: 'Intenet', amount: -1000 }
 // ];
 
+
 let transactions=[];
 
 // Function to Generate an ID
