@@ -614,6 +614,7 @@ section .title::after{
 @media (max-width:690px){
     .max-width {
         padding: 0 23px;
+        width: 100%;
     }
     .home .home-container .text-2{
         font-size: 60px;
@@ -632,6 +633,10 @@ section .title::after{
 }
 
 @media (max-width:500px){
+    .max-width {
+        padding: 0 15px;
+    }
+
     .home .home-container .text-2{
         font-size: 50px;
     }
@@ -641,10 +646,9 @@ section .title::after{
     }
 }
 
-@media (max-width:360){
+@media (max-width:360px){
     .max-width {
-        padding: 0 15px;
+        padding: 0 10px;
         width: 100%;
     }
-
 }
