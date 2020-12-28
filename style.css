@@ -640,3 +640,11 @@ section .title::after{
         font-size: 27px;
     }
 }
+
+@media (max-width:360){
+    .max-width {
+        padding: 0 15px;
+        width: 100%;
+    }
+
+}
