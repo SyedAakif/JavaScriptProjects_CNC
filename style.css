@@ -53,6 +53,7 @@
 .nav-bar .menu li {
     list-style: none;
     display: inline-block;
+    scroll-behavior: smooth;
 }
 
 .nav-bar .menu li a{
@@ -60,6 +61,7 @@
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
+    scroll-behavior: smooth;
     transition: color 0.3s ease;
 }
 
